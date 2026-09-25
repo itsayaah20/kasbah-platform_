@@ -1,0 +1,159 @@
+/* Kasbah — design tokens.
+   Palette de séries et statuts : instance de référence validée (daltonisme,
+   contraste) ; les couleurs de marque restent hors des graphiques. */
+
+:root,
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: #0e0f11;
+  --bg-elev: #131417;
+  --surface-1: #1a1a19;
+  --surface-2: #202021;
+  --surface-3: #28282a;
+  --surface-hover: #242426;
+  --border: #2c2c2f;
+  --border-strong: #3a3a3e;
+
+  --text-primary: #f4f3ef;
+  --text-secondary: #c3c2b7;
+  --text-muted: #8d8c85;
+  --text-inverse: #0b0b0b;
+
+  --brand: #d9a24e;
+  --brand-soft: rgba(217, 162, 78, 0.12);
+  --accent: #5b9df0;
+  --accent-soft: rgba(91, 157, 240, 0.14);
+  --focus: #86b6ef;
+
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --series-3: #199e70;
+  --series-4: #c98500;
+  --series-5: #d55181;
+  --series-6: #008300;
+  --series-7: #9085e9;
+  --series-8: #e66767;
+
+  --good: #0ca30c;
+  --warning: #fab219;
+  --serious: #ec835a;
+  --critical: #d03b3b;
+  --info: #5598e7;
+  --neutral: #8d8c85;
+
+  --good-soft: rgba(12, 163, 12, 0.14);
+  --warning-soft: rgba(250, 178, 25, 0.14);
+  --serious-soft: rgba(236, 131, 90, 0.15);
+  --critical-soft: rgba(208, 59, 59, 0.16);
+  --info-soft: rgba(85, 152, 231, 0.15);
+  --neutral-soft: rgba(141, 140, 133, 0.16);
+
+  --good-text: #5fd35f;
+  --warning-text: #fbc653;
+  --serious-text: #f3a383;
+  --critical-text: #f08080;
+  --info-text: #8dbcf2;
+  --neutral-text: #b5b4ad;
+
+  --seq-1: #184f95;
+  --seq-2: #256abf;
+  --seq-3: #3987e5;
+  --seq-4: #6da7ec;
+  --seq-5: #9ec5f4;
+
+  --grid: #2c2c2f;
+  --axis: #8d8c85;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.5);
+  --overlay: rgba(5, 5, 7, 0.66);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --bg: #f4f3ef;
+  --bg-elev: #fafaf8;
+  --surface-1: #fcfcfb;
+  --surface-2: #f6f5f2;
+  --surface-3: #eeede9;
+  --surface-hover: #f1f0ec;
+  --border: #e3e2dc;
+  --border-strong: #d2d1ca;
+
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --text-muted: #77766f;
+  --text-inverse: #ffffff;
+
+  --brand: #a86f1d;
+  --brand-soft: rgba(168, 111, 29, 0.1);
+  --accent: #2a78d6;
+  --accent-soft: rgba(42, 120, 214, 0.1);
+  --focus: #2a78d6;
+
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --series-3: #1baf7a;
+  --series-4: #eda100;
+  --series-5: #e87ba4;
+  --series-6: #008300;
+  --series-7: #4a3aa7;
+  --series-8: #e34948;
+
+  --good-text: #006300;
+  --warning-text: #8a5a00;
+  --serious-text: #a8491f;
+  --critical-text: #b02a2a;
+  --info-text: #1c5cab;
+  --neutral-text: #52514e;
+
+  --good-soft: rgba(12, 163, 12, 0.1);
+  --warning-soft: rgba(250, 178, 25, 0.16);
+  --serious-soft: rgba(236, 131, 90, 0.14);
+  --critical-soft: rgba(208, 59, 59, 0.1);
+  --info-soft: rgba(42, 120, 214, 0.1);
+  --neutral-soft: rgba(119, 118, 111, 0.12);
+
+  --seq-1: #cde2fb;
+  --seq-2: #86b6ef;
+  --seq-3: #3987e5;
+  --seq-4: #1c5cab;
+  --seq-5: #0d366b;
+
+  --grid: #e8e7e2;
+  --axis: #77766f;
+
+  --shadow-sm: 0 1px 2px rgba(20, 20, 18, 0.06);
+  --shadow-md: 0 8px 24px rgba(20, 20, 18, 0.08);
+  --shadow-lg: 0 20px 48px rgba(20, 20, 18, 0.14);
+  --overlay: rgba(20, 20, 18, 0.4);
+}
+
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', monospace;
+
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  --sidebar-w: 264px;
+  --sidebar-w-collapsed: 72px;
+  --topbar-h: 60px;
+
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur: 160ms;
+}

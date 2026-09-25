@@ -1,0 +1,45 @@
+// Main courante de la cellule de crise — Plan_de_containment_complet.pdf, section 16.
+// Les heures du document sont décalées d'une heure par rapport à la plateforme KASBAH
+// (ex. A-02 notée 13:27 dans le plan, reçue à 14:27 sur la plateforme) : `time` est
+// l'heure réalignée sur la plateforme, `docTime` l'heure telle qu'écrite dans le PDF.
+// `cellId` rattache la source à une cellule quand elle en est une.
+
+export const logbook = [
+  { day: 'J1', time: '11:02', docTime: '10:02', source: 'Direction (PDG)', cellId: 'direction', event: 'Prise de poste ; cartographie demandée pour 12h00' },
+  { day: 'J1', time: '11:07', docTime: '10:07', source: 'Direction (PDG)', cellId: 'direction', event: 'Dossier de prise de poste transmis' },
+  { day: 'J1', time: '11:17', docTime: '10:17', source: 'SOC', cellId: 'soc', event: 'Campagne d’hameçonnage vers la direction financière' },
+  { day: 'J1', time: '11:32', docTime: '10:32', source: 'Support', cellId: null, event: 'Vague de tickets dans plusieurs services' },
+  { day: 'J1', time: '11:42', docTime: '10:42', source: 'Cellule', cellId: null, event: 'A-11 qualifiée preuve', evidence: ['A-11'] },
+  { day: 'J1', time: '11:52', docTime: '10:52', source: 'Cellule', cellId: null, event: 'A-01 qualifiée preuve', evidence: ['A-01'] },
+  { day: 'J1', time: '12:12', docTime: '11:12', source: 'OasisNet', cellId: null, event: 'Message évasif sur une maintenance « mal terminée »' },
+  { day: 'J1', time: '12:17', docTime: '11:17', source: 'Salarié DF', cellId: null, event: 'Déclare avoir saisi son mot de passe' },
+  { day: 'J1', time: '12:52', docTime: '11:52', source: 'DSI', cellId: null, event: 'Parle d’un « incident mineur »' },
+  { day: 'J1', time: '14:27', docTime: '13:27', source: 'Cellule', cellId: null, event: 'A-02 qualifiée preuve (compte svc_oasisnet)', evidence: ['A-02'] },
+  { day: 'J1', time: '14:47', docTime: '13:47', source: 'Direction financière', cellId: null, event: 'Fichiers .mirage sur le partage comptable' },
+  { day: 'J1', time: '15:02', docTime: '14:02', source: 'SOC', cellId: 'soc', event: 'Clé USB écartée (FP-7)', evidence: ['A-19'] },
+  { day: 'J1', time: '15:12', docTime: '14:12', source: 'Chérifienne des Mines', cellId: null, event: 'Réclamation : portail inaccessible, réponse exigée sous 24 h' },
+  { day: 'J1', time: '~15:30', docTime: '~14:30', source: 'Cellule', cellId: null, event: 'Décision D1 : FIN-112 isolé sous tension', decision: 'D1' },
+  { day: 'J1', time: '15:57', docTime: '14:57', source: 'Cellule', cellId: 'direction', event: 'Cartographie déposée (retard sur 12h00)' },
+  { day: 'J1', time: '16:05', docTime: '15:05', source: 'Forensic', cellId: 'forensics', event: 'Isolement de FIN-112 validé' },
+  { day: 'J1', time: '16:12', docTime: '15:12', source: 'DSI', cellId: null, event: 'Courriel de migration confirmé légitime (FP-8)', evidence: ['A-20'] },
+  { day: 'J1', time: '16:22', docTime: '15:22', source: 'Cellule', cellId: null, event: 'A-05 qualifiée preuve (sauvegardes)', evidence: ['A-05'] },
+  { day: 'J1', time: '16:28', docTime: '15:28', source: 'Veeam', cellId: null, event: 'BKP-01 et BKP-02 injoignables' },
+  { day: 'J2', time: '11:01', docTime: '10:01', source: 'SIROCCO', cellId: null, event: 'Note de rançon : 20 BTC sous 48 h' },
+  { day: 'J2', time: '11:11', docTime: '10:11', source: 'Forensic', cellId: 'forensics', event: 'A-04 : horodatage falsifié de la note', evidence: ['A-04'] },
+  { day: 'J2', time: '11:14', docTime: '10:14', source: 'SOC', cellId: 'soc', event: 'A-13 : 23/40 serveurs chiffrés', evidence: ['A-13'] },
+  { day: 'J2', time: '11:18', docTime: '10:18', source: 'SOC', cellId: 'soc', event: 'A-09 : règle pare-feu et canal C2', evidence: ['A-09'] },
+  { day: 'J2', time: '11:21', docTime: '10:21', source: 'Équipe de nuit', cellId: null, event: 'Rapport : chiffrement vers 03h15' },
+  { day: 'J2', time: '11:56–12:24', docTime: '10:56–11:24', source: 'SOC', cellId: 'soc', event: 'A-16, A-15, A-41, A-14, A-23, A-40, A-26 reçues et qualifiées', evidence: ['A-16', 'A-15', 'A-41', 'A-14', 'A-23', 'A-40', 'A-26'] },
+  { day: 'J2', time: '12:06', docTime: '11:06', source: 'OasisNet', cellId: null, event: '« Anomalie de supervision », toujours évasif' },
+  { day: 'J2', time: '12:16', docTime: '11:16', source: 'Salarié DF', cellId: null, event: 'Signale un ordre de virement suspect, rien exécuté' },
+  { day: 'J2', time: '~12:25', docTime: '~11:25', source: 'Cellule', cellId: null, event: 'Décision D2 : couper ou maintenir → isoler seulement les segments critiques', decision: 'D2' },
+  { day: 'J2', time: '15:59', docTime: '14:59', source: 'RSSI', cellId: null, event: 'Choix tenable, garder le doigt sur le bouton de coupure OT' },
+  { day: 'J2', time: '16:01', docTime: '15:01', source: 'Autorité', cellId: null, event: 'Demande d’éléments sous 72 h' },
+  { day: 'J2', time: '16:01', docTime: '15:01', source: 'Presse / interne', cellId: 'communication', event: 'Article équilibré ; apaisement des équipes' },
+  { day: 'J2', time: '16:03', docTime: '15:03', source: 'Chérifienne / assureur', cellId: null, event: 'Réponse prudente notée ; posture validée par l’assureur' },
+  { day: 'J2', time: '~16:05', docTime: '~15:05', source: 'Cellule', cellId: null, event: 'Décision D3 : notification à l’Autorité', decision: 'D3' },
+  { day: 'J2', time: '16:26', docTime: '15:26', source: 'Forensic', cellId: 'forensics', event: 'DarkAtlas écarté (FP-3)' },
+  { day: 'J2', time: '16:31', docTime: '15:31', source: 'Cellule', cellId: null, event: 'A-07 qualifiée preuve (à confirmer)', evidence: ['A-07'] },
+  { day: 'J2', time: '16:42', docTime: '15:42', source: 'Autorité / assureur', cellId: 'risque', event: 'Notification reçue ; couverture confirmée' },
+  { day: 'J2', time: 'Fin J2', source: 'SIROCCO', cellId: null, event: 'Publication annoncée pour J3 11h00' },
+];
